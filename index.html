@@ -25,13 +25,18 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <h1>How Shopping Habits in Canada Have Changed Over the Years </h1>
-                <p>The way Canadians shop and spend has changed a lot in the past few years. From the COVID-19 pandemic
-                    to rising living costs, these events have left a big mark on our daily lives. Let’s look at how
-                    things are different now.</p>
+            <div class="col-12 mt-5">
+                <h1>How Canadian Shopping Habits Changed After COVID-19</h1>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 sub-header">
+                        <h6> Data Storytelling </h6>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-md-end sub-header">
+                        <h6> by Sara Amouzesh </h6>
+                    </div>
+                </div>
             </div>
-            <div class="col-12">
+            <div class="col-12 mt-3">
                 <h3>Shopping Online or In-Store</h3>
                 <p>During the pandemic, online shopping became a lifesaver. Locked down at home, many Canadians turned
                     to their phones and computers to buy what they needed. From early 2020 to mid-2022, online sales
@@ -43,9 +48,11 @@
                     the two.</p>
                 <div class="row">
                     <div class="col-md-6">
+                        <h6 id="graph-title">Shopping Trends (12+)</h6>
                         <canvas id="shoppingTrends12Plus" style="width: 100%; height: 400px;"></canvas>
                     </div>
                     <div class="col-md-6">
+                        <h6 id="graph-title">Shopping Trends (18-30)</h6>
                         <canvas id="shoppingTrends18To34" style="width: 100%; height: 400px;"></canvas>
                     </div>
                 </div>
@@ -57,20 +64,30 @@
                             labels: ['Fall 2019', 'Spring 2020', 'Fall 2020', 'Spring 2021', 'Fall 2021', 'Spring 2022', 'Fall 2022', 'Spring 2023', 'Fall 2023', 'Spring 2024', 'Fall 2024'],
                             datasets: [
                                 {
-                                    label: 'In-Store (12+)',
+                                    label: 'In-Store',
                                     data: [57, 58, 58, 59, 57, 54, 54, 54, 54, 53, 54],
-                                    borderColor: '#4CAF50',
-                                    backgroundColor: 'rgba(76, 175, 80, 0.2)',
-                                    fill: true,
+                                    borderColor: '#E91E63',
+                                    backgroundColor: '#ffffff',
+                                    fill: false,
                                 },
                                 {
-                                    label: 'Online (12+)',
+                                    label: 'Online',
                                     data: [29, 29, 30, 32, 35, 35, 37, 38, 38, 39, 39],
-                                    borderColor: '#FF9800',
-                                    backgroundColor: 'rgba(255, 152, 0, 0.2)',
-                                    fill: true,
+                                    borderColor: '#4CAF50',
+                                    backgroundColor: '#ffffff',
+                                    fill: false,
                                 }
                             ]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    title: {
+                                        display: true,
+                                        text: 'Percentage (%)',
+                                    }
+                                }
+                            }
                         }
                     });
 
@@ -81,104 +98,114 @@
                             labels: ['Fall 2019', 'Spring 2020', 'Fall 2020', 'Spring 2021', 'Fall 2021', 'Spring 2022', 'Fall 2022', 'Spring 2023', 'Fall 2023', 'Spring 2024', 'Fall 2024'],
                             datasets: [
                                 {
-                                    label: 'In-Store (18-30)',
+                                    label: 'In-Store',
                                     data: [42, 45, 44, 47, 45, 42, 41, 39, 37, 38, 41],
-                                    borderColor: '#4CAF50',
-                                    backgroundColor: 'rgba(76, 175, 80, 0.2)',
-                                    fill: true,
+                                    borderColor: '#E91E63',
+                                    backgroundColor: '#ffffff',
+                                    fill: false,
                                 },
                                 {
-                                    label: 'Online (18-34)',
+                                    label: 'Online',
                                     data: [45, 45, 45, 46, 47, 47, 48, 52, 52, 51, 49],
-                                    borderColor: '#FF9800',
-                                    backgroundColor: 'rgba(255, 152, 0, 0.2)',
-                                    fill: true,
+                                    borderColor: '#4CAF50',
+                                    backgroundColor: '#ffffff',
+                                    fill: false,
                                 }
                             ]
-                        }
-                    });
-                </script>
-                <div class="col-12">
-                    <h3>Where Canadians Spend Their Money</h3>
-                    <p>While people are spending more money these days, they’re still not back to their pre-pandemic
-                        habits. Some categories, like children’s clothing and cross-border shopping, are still behind
-                        where they used to be.
-
-                        On the other hand, beauty products and dining out have seen a big rise. For example, spending on
-                        beauty products by teenagers has grown by an impressive 77% in just one year! Canadians are also
-                        returning to restaurants while still loving delivery apps like Uber Eats and Skip the Dishes.
-                    </p>
-                    <canvas id="spendingCategories" style="width: 100%; height: 400px;"></canvas>
-                    <script>
-                        const spendingCtx = document.getElementById('spendingCategories').getContext('2d');
-                        new Chart(spendingCtx, {
-                            type: 'bar',
-                            data: {
-                                labels: ['Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022', 'Fall 2023', 'Fall 2024'],
-                                datasets: [
-                                    {
-                                        label: 'Restaurants',
-                                        data: [107, 100, 82, 97, 109, 111],
-                                        borderColor: '#4CAF50',
-                                        backgroundColor: 'rgba(76, 175, 80, 0.2)',
-                                        fill: true,
-                                    },
-                                    {
-                                        label: 'Books',
-                                        data: [106, 104, 107, 104, 109, 106],
-                                        borderColor: '#FF9800',
-                                        backgroundColor: 'rgba(255, 152, 0, 0.2)',
-                                        fill: true,
-                                    },
-                                    {
-                                        label: 'Cosmetics',
-                                        data: [22, 22, 18, 19, 22, 23],
-                                        borderColor: '#2196F3',
-                                        backgroundColor: 'rgba(33, 150, 243, 0.2)',
-                                        fill: true,
-                                    },
-                                    {
-                                        label: 'Cross-Border Shopping',
-                                        data: [83, 79, 38, 29, 59, 68],
-                                        borderColor: '#E91E63',
-                                        backgroundColor: 'rgba(233, 30, 99, 0.2)',
-                                        fill: true,
-                                    }
-                                ]
-                            },
-                            options: {
-                                responsive: true,
-                                plugins: {
-                                    legend: {
-                                        position: 'top',
-                                    },
-                                },
-                                scales: {
-                                    x: {
-                                        title: {
-                                            display: true,
-                                            text: 'Categories',
-                                        }
-                                    },
-                                    y: {
-                                        title: {
-                                            display: true,
-                                            text: 'Average Spend ($)',
-                                        }
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    title: {
+                                        display: true,
+                                        text: 'Percentage (%)',
                                     }
                                 }
                             }
-                        });
-                    </script>
-                </div>
-
+                        }
+                    });
+                </script>
 
             </div>
-            <div class="col-12">
+            <div class="col-12 mt-5">
+                <h3>Where Canadians Spend Their Money</h3>
+                <p>While people are spending more money these days, they’re still not back to their pre-pandemic
+                    habits. Some categories, like children’s clothing and cross-border shopping, are still behind
+                    where they used to be.
+
+                    On the other hand, beauty products and dining out have seen a big rise. For example, spending on
+                    beauty products by teenagers has grown by an impressive 77% in just one year! Canadians are also
+                    returning to restaurants while still loving delivery apps like Uber Eats and Skip the Dishes.
+                </p>
+                <canvas id="spendingCategories" style="width: 100%; height: 400px;"></canvas>
+                <script>
+                    const spendingCtx = document.getElementById('spendingCategories').getContext('2d');
+                    new Chart(spendingCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: ['Fall 2019', 'Fall 2020', 'Fall 2021', 'Fall 2022', 'Fall 2023', 'Fall 2024'],
+                            datasets: [
+                                {
+                                    label: 'Restaurants',
+                                    data: [107, 100, 82, 97, 109, 111],
+                                    borderColor: '#4CAF50',
+                                    backgroundColor: 'rgba(76, 175, 80, 0.2)',
+                                    fill: false,
+                                },
+                                {
+                                    label: 'Books',
+                                    data: [106, 104, 107, 104, 109, 106],
+                                    borderColor: '#FF9800',
+                                    backgroundColor: 'rgba(255, 152, 0, 0.2)',
+                                    fill: true,
+                                },
+                                {
+                                    label: 'Cosmetics',
+                                    data: [22, 22, 18, 19, 22, 23],
+                                    borderColor: '#2196F3',
+                                    backgroundColor: 'rgba(33, 150, 243, 0.2)',
+                                    fill: true,
+                                },
+                                {
+                                    label: 'Cross-Border Shopping',
+                                    data: [83, 79, 38, 29, 59, 68],
+                                    borderColor: '#E91E63',
+                                    backgroundColor: 'rgba(233, 30, 99, 0.2)',
+                                    fill: true,
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                                legend: {
+                                    position: 'top',
+                                },
+                            },
+                            scales: {
+                                y: {
+                                    title: {
+                                        display: true,
+                                        text: 'Average Spend ($)',
+                                    }
+                                }
+                            }
+                        }
+                    });
+                </script>
+            </div>
+
+            <div class="col-12 mt-5">
                 <h3>How Rising Costs Affect Shopping</h3>
-                <p>The rising cost of living continues to change how Canadians shop. Grocery bills have gone up by 4% in the past two years, but not everyone is affected equally. Lower-income households have seen their grocery spending rise by 7%, while wealthier families experienced only a 1% increase.  
-            
-                    This shows how inflation impacts lower-income families more, making it harder for them to manage their budgets. Many Canadians are turning to budget-friendly options and cutting back on non-essential items.</p>
+                <p>The rising cost of living continues to change how Canadians shop. Grocery bills have gone up by
+                    4% in
+                    the past two years, but not everyone is affected equally. Lower-income households have seen
+                    their
+                    grocery spending rise by 7%, while wealthier families experienced only a 1% increase.
+
+                    This shows how inflation impacts lower-income families more, making it harder for them to manage
+                    their budgets. Many Canadians are turning to budget-friendly options and cutting back on
+                    non-essential items.</p>
                 <canvas id="grocerySpending" style="width: 100%; height: 400px;"></canvas>
                 <script>
                     const groceryCtx = document.getElementById('grocerySpending').getContext('2d');
@@ -190,17 +217,22 @@
                                 {
                                     label: 'Income <$60k',
                                     data: [143, 153],
-                                    backgroundColor: '#FF9800',
+                                    borderColor: '#2196F3',
+                                    backgroundColor: 'rgba(33, 150, 243, 0.2)',
                                 },
                                 {
                                     label: 'All 12+',
                                     data: [181, 188],
-                                    backgroundColor: '#4CAF50',
+                                    borderColor: '#E91E63',
+                                    backgroundColor: 'rgba(233, 30, 99, 0.2)',
+                                    fill: true,
                                 },
                                 {
                                     label: 'Income >$150k',
                                     data: [217, 218],
-                                    backgroundColor: '#2196F3',
+                                    borderColor: '#FF9800',
+                                    backgroundColor: 'rgba(255, 152, 0, 0.2)',
+                                    fill: true,
                                 }
                             ]
                         },
@@ -216,7 +248,6 @@
                                     stacked: true,
                                     title: {
                                         display: true,
-                                        text: 'Year',
                                     }
                                 },
                                 y: {
@@ -231,9 +262,24 @@
                     });
                 </script>
             </div>
-            
+            <div class="col-12 mt-5 mb-5">
+                <h3>Conclusion</h3>
+                <p>The way Canadians shop has changed dramatically in just a few years, influenced by global events
+                    and
+                    economic challenges. Online shopping remains a big trend, but in-store visits are making a
+                    comeback.
+                    Spending habits are shifting, with some categories like dining out and beauty products on the
+                    rise,
+                    while others, like travel and children’s clothing, are slower to recover.
+
+                    At the same time, rising costs are forcing many Canadians to think carefully about their
+                    budgets,
+                    especially those in lower-income households. The future of shopping in Canada will likely
+                    continue
+                    to evolve, but one thing is clear: Canadians are adapting to find a balance that works for them.
+                </p>
+            </div>
         </div>
-    </div>
 </body>
 
 </html>
